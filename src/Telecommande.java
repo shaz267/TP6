@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class Telecommande {
 
-    private Lampe lampes;
+    private ArrayList<Lampe> lampes;
 
     public Telecommande(){
 

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TelecommandeTest {
 
 
-    @Test
+    /*@Test
     public void TestAjoutVide() {
 
         Telecommande t = new Telecommande();
@@ -18,6 +18,6 @@ public class TelecommandeTest {
 
         assertEquals();
 
-    }
+    }*/
 
 }
