@@ -3,22 +3,36 @@
 
 Appareil <|-- Lampe
 Appareil <|-- Hifi
-Appareil <-- Telecommande
+Telecommande "*" --> "*" Appareil: - appareils
 
+'''classes
 class Telecommande {
-
-
+    - lampes: ArrayList
+    + ajouterLampe(Lampe)
+    + activerLampe(int)
+    + desactiverLampe(int)
+    + activerTout()
+    + toString()
 }
 
-class Appareil {
-
+interface Appareil {
+    + allumer()
+    + eteindre()
 }
 
 class Lampe {
-
+    - nom: String
+    - allume: boolean
+    - allumer()
+    - eteindre()
+    - toString()
+    - isAllume()
 }
 
 class Hifi {
-
+    - son: int
+    - allumer()
+    - eteindre()
+    - toString()
 }
 @enduml
