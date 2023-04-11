@@ -4,6 +4,8 @@ public class Telecommande {
 
     private ArrayList<Lampe> lampes;
 
+    private ArrayList<Hifi> hifis;
+
     public Telecommande(){
 
 
@@ -30,6 +32,26 @@ public class Telecommande {
 
             this.lampes.get(i).allumer();
         }
+
+        for (int i = 0; i < this.hifis.size(); i++){
+
+            this.hifis.get(i).allumer();
+        }
+    }
+
+    public void ajouterHifi(Hifi hifi){
+
+        this.hifis.add(hifi);
+    }
+
+    public void activerHifi(int indiceHifi){
+
+        this.hifis.get(indiceHifi).allumer();
+    }
+
+    public void desactiverHifi(int indiceHifi){
+
+        this.hifis.get(indiceHifi).eteindre();
     }
 
     public String toString(){
@@ -38,6 +60,11 @@ public class Telecommande {
         for (int i = 0; i < this.lampes.size(); i++){
 
             rep += this.lampes.toString() + "\n";
+        }
+
+        for (int i = 0; i < this.hifis.size(); i++){
+
+            rep += this.hifis.toString() + "\n";
         }
 
         return rep;
