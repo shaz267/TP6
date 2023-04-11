@@ -11,26 +11,39 @@ public class Telecommande {
 
     public void ajouterLampe(Lampe lampe){
 
-        throw new Error ("code non ecrit ");
+        this.lampes.add(lampe);
     }
 
     public void activerLampe(int indiceLampe){
 
-        throw new Error ("code non ecrit ");
+        this.lampes.get(indiceLampe).allumer();
     }
 
     public void desactiverLampe(int indiceLampe){
 
-        throw new Error ("code non ecrit ");
+        this.lampes.get(indiceLampe).eteindre();
     }
 
     public void activerTout(){
 
-        throw new Error ("code non ecrit ");
+        for (int i = 0; i < this.lampes.size(); i++){
+
+            this.lampes.get(i).allumer();
+        }
     }
 
     public String toString(){
 
-        throw new Error ("code non ecrit ");
+        String rep = "";
+        for (int i = 0; i < this.lampes.size(); i++){
+
+            rep += this.lampes.toString() + "\n";
+        }
+
+        return rep;
+    }
+
+    public ArrayList<Lampe> getLampes() {
+        return lampes;
     }
 }
