@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Appareil <|-- Lampe
+Appareil <|-- Hifi
+Telecommande "*" --> "*" Appareil: - appareils
+
+'''classes
+class Telecommande {
+    - lampes: ArrayList
+    + ajouterLampe(Lampe)
+    + activerLampe(int)
+    + desactiverLampe(int)
+    + activerTout()
+    + toString()
+}
+
+interface Appareil {
+    + allumer()
+    + eteindre()
+}
+
+class Lampe {
+    - nom: String
+    - allume: boolean
+    - allumer()
+    - eteindre()
+    - toString()
+    - isAllume()
+}
+
+class Hifi {
+    - son: int
+    - allumer()
+    - eteindre()
+    - toString()
+}
+@enduml
