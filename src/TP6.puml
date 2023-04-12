@@ -3,14 +3,16 @@
 
 Appareil <|-- Lampe
 Appareil <|-- Hifi
+Appareil <|-- CheminAdaptateur
 Telecommande "*" --> "*" Appareil: - appareils
+CheminAdaptateur "1" --> "1" Cheminee: - cheminee
 
 '''classes
 class Telecommande {
     - lampes: ArrayList
     + ajouterAppareil(Lampe)
-    + activerLampe(int)
-    + desactiverLampe(int)
+    + activerAppareil(int)
+    + desactiverAppareil(int)
     + activerTout()
     + toString()
 }
@@ -23,16 +25,30 @@ interface Appareil {
 class Lampe {
     - nom: String
     - allume: boolean
-    - allumer()
-    - eteindre()
-    - toString()
-    - isAllume()
+    + allumer()
+    + eteindre()
+    + toString()
+    + isAllume()
 }
 
 class Hifi {
     - son: int
-    - allumer()
-    - eteindre()
-    - toString()
+    + allumer()
+    + eteindre()
+    + toString()
+}
+
+class Cheminee {
+    - intensite: int
+    + changerIntensite()
+    + getLumiere()
+    + toString()
+}
+
+class CheminAdaptateur {
+
+    - Cheminee: cheminee
+    + allumer()
+    + eteindre()
 }
 @enduml
