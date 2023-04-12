@@ -32,8 +32,23 @@ public class Telecommande {
         }
     }
 
+    public String toString(){
+
+        String rep = "";
+        for (int i = 0; i < this.appareils.size(); i++){
+
+            rep += this.appareils.get(i).toString() + "\n";
+        }
+        return rep;
+    }
+
 
     public ArrayList<Appareils> getAppareils() {
         return this.appareils;
+    }
+
+    public int getNombre(){
+
+        return this.appareils.size();
     }
 }

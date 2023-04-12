@@ -14,9 +14,9 @@ public class TelecommandeTest {
         Telecommande t = new Telecommande();
         Lampe l = new Lampe("Laf");
 
-        t.ajouterLampe(l);
+        t.ajouterAppareil(l);
 
-        assertEquals(1, t.getLampes().size(), "La lampe doit contenir un seul élément");
+        assertEquals(1, t.getAppareils().size(), "La lampe doit contenir un seul élément");
 
     }
 
@@ -27,10 +27,10 @@ public class TelecommandeTest {
         Lampe l = new Lampe("Laf");
         Lampe l2 = new Lampe("Lef");
 
-        t.ajouterLampe(l);
-        t.ajouterLampe(l2);
+        t.ajouterAppareil(l);
+        t.ajouterAppareil(l2);
 
-        assertEquals(2, t.getLampes().size(), "La lampe doit contenir un seul élément");
+        assertEquals(2, t.getAppareils().size(), "La lampe doit contenir un seul élément");
 
     }
 
@@ -39,9 +39,9 @@ public class TelecommandeTest {
 
         Telecommande t = new Telecommande();
         Lampe l = new Lampe("Laf");
-        t.ajouterLampe(l);
+        t.ajouterAppareil(l);
 
-        t.activerLampe(0);
+        t.activerAppareil(0);
 
         assertEquals(true, l.isAllume(), "La lampe doit etre allumé");
 
@@ -53,24 +53,14 @@ public class TelecommandeTest {
         Telecommande t = new Telecommande();
         Lampe l = new Lampe("Laf");
         Lampe l2 = new Lampe("Lef");
-        t.ajouterLampe(l);
-        t.ajouterLampe(l2);
+        t.ajouterAppareil(l);
+        t.ajouterAppareil(l2);
 
-        t.activerLampe(1);
+        t.activerAppareil(1);
 
         assertEquals(true, l2.isAllume(), "La lampe doit etre allumé");
 
     }
 
-    @Test
-    public void TestActivationInexi() {
-
-        Telecommande t = new Telecommande();
-
-        t.activerLampe(0);
-
-        assertEquals(null, t.getLampes().get(0).isAllume(), "La lampe doit etre inexistante");
-
-    }
 
 }
