@@ -58,7 +58,7 @@ public class TelecommandeTest {
 
         t.activerLampe(1);
 
-        assertEquals(true, l.isAllume(), "La lampe doit etre allumé");
+        assertEquals(true, l2.isAllume(), "La lampe doit etre allumé");
 
     }
 

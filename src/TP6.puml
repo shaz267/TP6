@@ -8,7 +8,7 @@ Telecommande "*" --> "*" Appareil: - appareils
 '''classes
 class Telecommande {
     - lampes: ArrayList
-    + ajouterLampe(Lampe)
+    + ajouterAppareil(Lampe)
     + activerLampe(int)
     + desactiverLampe(int)
     + activerTout()

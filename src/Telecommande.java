@@ -2,75 +2,38 @@ import java.util.ArrayList;
 
 public class Telecommande {
 
-    private ArrayList<Lampe> lampes;
-
-    private ArrayList<Hifi> hifis;
+    private ArrayList<Appareils> appareils;
 
     public Telecommande(){
 
-
+        this.appareils = new ArrayList<Appareils>();
     }
 
-    public void ajouterLampe(Lampe lampe){
+    public void ajouterAppareil(Appareils appareil){
 
-        this.lampes.add(lampe);
+        this.appareils.add(appareil);
     }
 
-    public void activerLampe(int indiceLampe){
+    public void activerAppareil(int indiceAppareil){
 
-        this.lampes.get(indiceLampe).allumer();
+        this.appareils.get(indiceAppareil).allumer();
     }
 
-    public void desactiverLampe(int indiceLampe){
+    public void desactiverAppareil(int indiceAppareil){
 
-        this.lampes.get(indiceLampe).eteindre();
+        this.appareils.get(indiceAppareil).eteindre();
     }
 
     public void activerTout(){
 
-        for (int i = 0; i < this.lampes.size(); i++){
+        for (int i = 0; i < this.appareils.size(); i++){
 
-            this.lampes.get(i).allumer();
-        }
-
-        for (int i = 0; i < this.hifis.size(); i++){
-
-            this.hifis.get(i).allumer();
+            this.appareils.get(i).allumer();
         }
     }
 
-    public void ajouterHifi(Hifi hifi){
 
-        this.hifis.add(hifi);
-    }
-
-    public void activerHifi(int indiceHifi){
-
-        this.hifis.get(indiceHifi).allumer();
-    }
-
-    public void desactiverHifi(int indiceHifi){
-
-        this.hifis.get(indiceHifi).eteindre();
-    }
-
-    public String toString(){
-
-        String rep = "";
-        for (int i = 0; i < this.lampes.size(); i++){
-
-            rep += this.lampes.toString() + "\n";
-        }
-
-        for (int i = 0; i < this.hifis.size(); i++){
-
-            rep += this.hifis.toString() + "\n";
-        }
-
-        return rep;
-    }
-
-    public ArrayList<Lampe> getLampes() {
-        return lampes;
+    public ArrayList<Appareils> getAppareils() {
+        return this.appareils;
     }
 }
