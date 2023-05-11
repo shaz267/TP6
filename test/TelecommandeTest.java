@@ -62,5 +62,25 @@ public class TelecommandeTest {
 
     }
 
+    @Test
+    public void TestActivationInex() {
+
+        Telecommande t = new Telecommande();
+        Lampe l = new Lampe("Laf");
+        t.ajouterAppareil(l);
+
+        try{
+            t.activerAppareil(1);
+        }
+        catch (IndexOutOfBoundsException i){
+
+            assertEquals(false, l.isAllume(), "aucune lampe ne doit etre allumé");
+        }
+
+
+        assertEquals(false, l.isAllume(), "aucune lampe ne doit etre allumé");
+
+    }
+
 
 }
