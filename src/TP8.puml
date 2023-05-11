@@ -3,10 +3,11 @@
 
 Appareil <|-- Lampe
 Appareil <|-- Hifi
-Appareil <|-- CheminAdaptateur
+Appareil <|-- ChemineeAdaptateur
+Appareil <|-- ThermostatAdaptateur
 Telecommande "*" --> "*" Appareil: - appareils
-CheminAdaptateur "1" --> "1" Cheminee: - cheminee
-
+ChemineeAdaptateur "1" --> "1" Cheminee: - cheminee
+ThermostatAdaptateur "1" --> "1" Thermostat: - thermostat
 '''classes
 class Telecommande {
     - lampes: ArrayList
@@ -45,9 +46,24 @@ class Cheminee {
     + toString()
 }
 
-class CheminAdaptateur {
+class ChemineeAdaptateur {
 
-    - Cheminee: cheminee
+    - cheminee: Cheminee
+    + allumer()
+    + eteindre()
+}
+
+class Thermostat {
+
+    - temperature : int
+    + paint()
+    + monterTemperature()
+    + baisserTemperature()
+}
+
+class ThermostatAdaptateur{
+
+    - thermostat : Thermostat
     + allumer()
     + eteindre()
 }

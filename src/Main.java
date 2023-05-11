@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import thermos.*;
 
 /**
  * classe qui cree des lampes et une telecommande associee.
@@ -29,6 +30,8 @@ public class Main {
 		Hifi h2 = new Hifi();
 		ChemineeAdaptateur c1 = new ChemineeAdaptateur();
 		ChemineeAdaptateur c2 = new ChemineeAdaptateur();
+		ThermostatAdaptateur tA = new ThermostatAdaptateur();
+		ThermostatAdaptateur tA2 = new ThermostatAdaptateur();
 
 		t.ajouterAppareil(l1);
 		t.ajouterAppareil(l2);
@@ -36,8 +39,14 @@ public class Main {
 		t.ajouterAppareil(h2);
 		t.ajouterAppareil(c1);
 		t.ajouterAppareil(c2);
+		t.ajouterAppareil(tA);
+		t.ajouterAppareil(tA2);
 
 		TelecommandeGraphique tg = new TelecommandeGraphique(t);
+
+
+
+
 	}
 
 	/**

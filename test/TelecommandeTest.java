@@ -82,5 +82,31 @@ public class TelecommandeTest {
 
     }
 
+    @Test
+    public void TestAllumerCheminee(){
+
+        Telecommande t = new Telecommande();
+        ChemineeAdaptateur c = new ChemineeAdaptateur();
+        t.ajouterAppareil(c);
+
+        t.activerAppareil(0);
+
+        assertEquals(true, c.isAllume(), "La cheminée doit etre allumée");
+    }
+
+    @Test
+    public void TestEteindreCheminee(){
+
+        Telecommande t = new Telecommande();
+        ChemineeAdaptateur c = new ChemineeAdaptateur();
+        t.ajouterAppareil(c);
+
+        t.activerAppareil(0);
+        assertEquals(true, c.isAllume(), "La cheminée doit etre allumée");
+
+        t.desactiverAppareil(0);
+
+        assertEquals(false, c.isAllume(), "La cheminée doit etre éteinte");
+    }
 
 }

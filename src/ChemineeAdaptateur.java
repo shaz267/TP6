@@ -21,4 +21,16 @@ public class ChemineeAdaptateur implements Appareils{
 
         return("Cheminee : " + this.cheminee.getLumiere());
     }
+
+    public boolean isAllume(){
+
+        boolean rep = false;
+
+        if (cheminee.intensite > 0){
+
+            rep = true;
+        }
+
+        return rep;
+    }
 }
